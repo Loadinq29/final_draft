@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <meta name="description" content="CWEB Assignment">
+    <meta name="keywords" content="Final Project.">
+    <meta name="author" content="Ryan Young">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Shop</title>
+<link rel=stylesheet href="css/sitestyle.css">
+<link rel=stylesheet href="css/loginstyle.css">
+
+<style>
+
+img{
+  max-width: 400px ;
+  max-height: 400px;
+}
+
+.parent {
+display: grid;
+grid-template-columns: repeat(9, 1fr);
+grid-template-rows: repeat(9, 1fr);
+grid-column-gap: 0px;
+grid-row-gap: 0px;
+background-color: #808080;
+height: 600px;
+}
+
+
+.flex-container{
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  padding: 20px;
+  justify-content: center;
+}
+
+.flex-item-left {
+  background-color: #800000;
+  padding: 10px;
+  flex: 50%;
+  padding: 10px;
+  margin: 110px;
+  float: left;
+}
+
+
+.flex-item-right {
+  background-color: #800000;
+  padding: 10px;
+  flex: 50%;
+  padding: 10px;
+  margin: 110px;
+  float: right;
+  
+}
+
+.button1{
+  float: left;
+}
+
+@media (max-width: 1000px) {
+  .flex-container {
+    flex-direction: column;}
+}
+
+
+
+
+</style>
+
+
+</head>
+
+
+<body>
+
+<nav>
+<ul>
+  <li><a href="index.html">Home</a></li>
+  <li><a href="shop.html">Shop</a></li>
+  <li><a href="gallery.html">Gallery</a></li>
+  <li><a href="about.html">About</a></li>
+  <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;" class="buttonl">Login</button>
+
+<div id="id01" class="modal">
+  
+  <form class="modal-content animate" action="fd.html" method="post">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <img src="Images/kevin.jpg" alt="free" class="avatar">
+    </div>
+
+    <div class="container">
+      <label for="uname"><b>Username</b></label>
+      <input type="text" placeholder="Enter Username" name="uname" required>
+
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+        
+      <button class="button" type="submit">Login</button>
+      <label>
+        <input type="checkbox" checked="checked" name="remember"> Remember me
+      </label>
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <button class="button" type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+      <span class="psw">Forgot <a href="#">password?</a></span>
+    </div>
+  </form>
+</div>
+
+<script>
+// Get the modal
+var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+</ul>
+
+
+</nav>
+
+<header>
+<h1>Mechanics Club</h1>
+
+  <h4>Store</h4>
+
+
+ <button onclick="myFunction()" class="button1">Buy Now!</button>
+
+
+<script>
+function myFunction() {
+  alert("Out of stock! Please don't come back.");
+}
+
+</script>
+</header>
+
+  <div class="flex-container">
+ 
+  <img src="Images/10mm.jpg" class="flex-item-left" alt="10mm">
+
+  <img src="Images/bucket10mm.jpg" class="flex-item-right" alt="bucket">
+  
+
+
+  
+  </div>
+
+
+<div class="myDiv">
+ 
+  
+<h1>Limted Stock! Shipping times vary depending how generous we feel.</h1>
+
+</div>
+
+</body>
+</html>

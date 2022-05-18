@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <meta name="description" content="CWEB Assignment">
+    <meta name="keywords" content="Final Project.">
+    <meta name="author" content="Ryan Young">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title> Mechanics Club</title>
+
+<link rel=stylesheet href="css/sitestyle.css">
+<link rel=stylesheet href="css/loginstyle.css">
+<link rel=stylesheet href="css/lightbox.css">
+
+</head>
+
+
+<body>
+<nav>
+<ul>
+  <li><a href="index.html">Home</a></li>
+  <li><a href="shop.html">Shop</a></li>
+  <li><a href="gallery.html">Gallery</a></li>
+  <li><a href="about.html">About</a></li>
+  <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;" class="buttonl">Login</button>
+
+<div id="id01" class="modal">
+  
+  <form class="modal-content animate" action="fd.html" method="post">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <img src="Images/kevin.jpg" alt="free" class="avatar">
+    </div>
+
+    <div class="container">
+      <label for="uname"><b>Username</b></label>
+      <input type="text" placeholder="Enter Username" name="uname" required>
+
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+        
+      <button class="button" type="submit">Login</button>
+      <label>
+        <input type="checkbox" checked="checked" name="remember"> Remember me
+      </label>
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <button class="button" type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+      <span class="psw">Forgot <a href="#">password?</a></span>
+    </div>
+  </form>
+</div>
+
+<script>
+// Get the modal
+var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+</ul>
+
+
+</nav>
+
+<header>
+<h1>Mechanics Club</h1>
+
+  <h4>Home</h4>
+
+</header>
+
+<div class="row">
+  <div class="column">
+    <img src="Images/cobaltss9.jpg" alt="cobaltss9" style="width:100%" onclick="openModal();currentSlide(1)" class="hover-shadow cursor">
+  </div>
+  <div class="column">
+    <img src="Images/chevytruck1.jpg" alt="chevytruck1" style="width:100%" onclick="openModal();currentSlide(2)" class="hover-shadow cursor">
+  </div>
+  <div class="column">
+    <img src="Images/f150.jpg" alt="f150" style="width:100%" onclick="openModal();currentSlide(3)" class="hover-shadow cursor">
+  </div>
+  <div class="column">
+    <img src="Images/rustcar.jpg"  style="width:100%" onclick="openModal();currentSlide(4)" class="hover-shadow cursor">
+  </div>
+</div>
+
+<div id="myModal" class="modal">
+  <span class="close cursor" onclick="closeModal()">&times;</span>
+  <div class="modal-content">
+
+    <div class="mySlides">
+      <div class="numbertext">1 / 4</div>
+      <img src="Images/cobaltss9.jpg" alt="cobaltss9" style="width:100%">
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">2 / 4</div>
+      <img src="Images/chevytruck1.jpg" alt="chevytruck1" style="width:100%">
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">3 / 4</div>
+      <img src="Images/f150.jpg" alt="f150" style="width:100%">
+    </div>
+    
+    <div class="mySlides">
+      <div class="numbertext">4 / 4</div>
+      <img src="Images/rustcar.jpg" alt="rustcar"  style="width:100%">
+    </div>
+    
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+    <div class="caption-container">
+      <p id="caption"></p>
+    </div>
+
+
+    <div class="column">
+      <img class="demo cursor" src="Images/cobaltss9.jpg" alt="Best car ever crafted"style="width:100%" onclick="currentSlide(1)" >
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="Images/chevytruck1.jpg" alt="A classic workhorse" style="width:100%" onclick="currentSlide(2)">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="Images/f150.jpg" alt="the most appalling automotive brand"style="width:100%" onclick="currentSlide(3)">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="Images/rustcar.jpg" alt="my dream car"  style="width:100%" onclick="currentSlide(4)">
+    </div>
+  </div>
+</div>
+
+<script>
+function openModal() {
+  document.getElementById("myModal").style.display = "block";
+}
+
+function closeModal() {
+  document.getElementById("myModal").style.display = "none";
+}
+
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  var captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
+</script>
+
+
+
+<div class="myDiv">
+	
+
+	<h2>"Whenever I’m Suffering From Insomnia, I Just Look At A Picture Of A Toyota Camry And I’m Straight Off."-Jeremny Clarkson(Top Gear)</h2>
+
+
+</div>
+<footer>
+    <button id="btn">Gold(It looks horrible)</button>
+<script>const btn = document.getElementById('btn');
+
+btn.addEventListener('click', function onClick(event) {
+  
+  document.body.style.backgroundColor = '#FFD700';
+
+ 
+});
+
+</script>
+
+</footer>
+
+</body>
+
+
+
+</html>

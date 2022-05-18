@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <meta name="description" content="CWEB Assignment">
+    <meta name="keywords" content="Final Project.">
+    <meta name="author" content="Ryan Young">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>About</title>
+
+<link rel=stylesheet href="css/sitestyle.css">
+<link rel=stylesheet href="css/loginstyle.css">
+
+<style>
+
+
+.main {
+  flex: 70%;
+  background-color: white;
+  padding: 20px;
+  margin: 100px;
+}
+
+.source{
+  color: black;
+}
+
+
+</style>
+
+</head>
+
+
+<body>
+
+<nav>
+<ul>
+  <li><a href="index.html">Home</a></li>
+  <li><a href="shop.html">Shop</a></li>
+  <li><a href="gallery.html">Gallery</a></li>
+  <li><a href="about.html">About</a></li>
+  <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;" class="buttonl">Login</button>
+
+<div id="id01" class="modal">
+  
+  <form class="modal-content animate" action="fd.html" method="post">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <img src="Images/kevin.jpg" alt="free" class="avatar">
+    </div>
+
+    <div class="container">
+      <label for="uname"><b>Username</b></label>
+      <input type="text" placeholder="Enter Username" name="uname" required>
+
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+        
+      <button class="button" type="submit">Login</button>
+      <label>
+        <input type="checkbox" checked="checked" name="remember"> Remember me
+      </label>
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <button class="button" type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+      <span class="psw">Forgot <a href="#">password?</a></span>
+    </div>
+  </form>
+</div>
+
+<script>
+// Get the modal
+var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+</ul>
+
+
+</nav>
+
+<header>
+<h1>Mechanics Club</h1>
+
+  <h4>About Us</h4>
+
+</header>
+<div class="main">
+    <h2>About This Site</h2>
+    <h5>Updated:5/15/22</h5>
+    <h1> Author:Ryan Young</h1>
+    <p>These web pages are part of my CWED 1010 Web Devlopment Class Project. This website includes examples of media queries, flex box and float properies, javascript properites, external and interal style sheets, animations and support for the user's screen size. </p>
+
+    <h6> Sources:</h6>
+
+    <a href="https://unsplash.com/" class="source">Unslapsh</a>
+    <a href="https://images.google.com/" class="source">Google Images</a>
+
+
+</div>
+  
+</body>
+</html>
